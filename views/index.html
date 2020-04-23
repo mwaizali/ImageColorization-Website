@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image colorization</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-4-utilities.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body{ font-family: 'Oswald', sans-serif;}
+        .sec{
+            width: 90%; margin: auto; margin-top: 120px;
+        }
+        .fixed-nav-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="blue-grey fixed-nav-bar">
+        <div class="nav-wrapper container" >
+          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="#" class="brand-logo">ImageColorization</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#home"><i class="material-icons left">home</i> Home</a></li>
+            <li><a href="#about"><i class="material-icons left">info</i> About</a></li>
+            <li><a href="#contact"><i class="material-icons left">call_end</i>Contact</a></li>
+            <li><a href="help.html"><i class="material-icons left">help</i>Help</a></li>
+        </ul>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav">
+      <li><a href="#home"><i class="material-icons left ">home</i> Home</a></li>
+      <li><a href="#about"><i class="material-icons left">info</i> About</a></li>
+      <li><a href="#contact"><i class="material-icons left">call_end</i>Contact</a></li>
+      <li><a href="help.html"><i class="material-icons left">help</i>Help</a></li>
+    </ul>
+    <section > 
+    <div id="home" class="parallax-container">
+        <div class="parallax">
+            <img src="images/img-6.jpg">
+        </div>
+    </div>
+        <div class="section white">
+          <div class="row container center">
+            <form  action="/" enctype="multipart/form-data" method="post">
+            <h2 class="header">Fill Colors In Your Image</h2>
+            <p class="grey-text text-darken-3 lighten-3">Upload any grey scale image</p>
+            <!-- <div class="file-path-wrapper blue-grey darken-4">
+            <input class="file-path validate" type="file" placeholder="Upload one or more files"><br>
+            </div> -->
+            <div class="file-field input-field">
+              <div class="btn blue-grey darken-4">
+                <span>File</span>
+                <input name="image-selector" type="file"  >
+              </div>
+                <div class="file-path-wrapper">
+                  <input name="image-selector" class="file-path validate" type="text" placeholder="Upload one or more files" required><div id="adiv"></div>
+              </div>
+            </div>
+            <p class="grey-text text-darken-3 lighten-3">Upload any grey scale image</p>
+            <button id="button" class="waves-effect waves-light btn-large blue-grey darken-4"  >Colorize it</button>  
+          </form>
+          </div>
+        </div>
+
+        <div class="parallax-container">
+          <div class="parallax"><img src="images/img-4.jpg"></div>
+        </div>
+        <!-- <div class="container center">
+            <section class=" ">
+                <button class="btn blue-grey lighten-1 " style="margin-top: 250px;" ><i class="material-icons left">file_upload</i>upload</button>
+            </section>
+        </div>
+    </div> -->
+
+    </section>
+    <br id="about">
+    <div>
+    <section class="sec">
+      <h2 class="center">About Us</h2>
+      <div class="row">
+            <div class="col s12 m4 l4 offset-l4"> <hr> </div>
+      </div>
+      <div class="row sec">    
+        <div class="col m5 s12 ">
+           <img  src="images/Half-Color.jpg" class="responsive-img">
+        </div>
+        <div class="col m5 s12 " >
+            <!-- <img src="AQ/1 IMG_1260 lg.jpg" class="responsive-img"> -->
+            <h3>What is image colorization?</h3>
+            <p style="font-size: x-large;">
+                        Bring a new meaning to your 
+                    photos using image colorizer
+                    Through our advance machine
+                    learning software, it can easily
+                    give natural color to your image  
+            </p>
+            <a href="about.html"><button class="waves-effect waves-light btn-large blue-grey darken-4" > For More</button></a>  
+         </div>
+      </div>
+    </section>
+  </div>
+  <br id="contact">
+    <section class="sec"> 
+            <h2 class="center">Contact Us</h2>
+            <div class="row">
+                <div class="col s12 m4 l4 offset-l4"> <hr> </div>      
+            </div>  
+  <div class="row sec">
+    <div class="col s12 m3">
+      <div class="card hoverable blue-grey lighten-2">
+        <div class="card-image">
+          <img src="images/cardali.jpeg" class="responsive-img">
+          <span class="card-title">Ali Ahmed</span>
+        </div>
+        <div class="card-content">
+          <p></p>
+        </div>
+        <div class="card-action">
+          <a href="#">For More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m3">
+      <div class="card hoverable blue-grey lighten-2" >
+        <div class="card-image">
+          <img src="images/cardwaiz.png" class="responsive-img">
+          <span class="card-title">Mohammad Waiz Ali</span>
+        </div>
+        <div class="card-content">
+          <p></p>
+        </div>
+        <div class="card-action">
+          <a href="https://www.linkedin.com/in/mohammad-waiz-ali-b79331136/">For More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m3">
+      <div class="card hoverable blue-grey lighten-2">
+        <div class="card-image">
+          <img src="images/cardtalha.jpeg" class="responsive-img">
+          <span class="card-title">Muhammad Talha Khalil</span>
+        </div>
+        <div class="card-content">
+          <p></p>
+        </div>
+        <div class="card-action">
+          <a href="https://www.linkedin.com/in/muhammad-talha-khalil-905551136">For More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m3">
+      <div class="card hoverable blue-grey lighten-2">
+        <div class="card-image ">
+          <img src="images/cardsaad.jpeg" class="responsive-img">
+          <span class="card-title">Muhammad saad Najib</span>
+        </div>
+        <div class="card-content">
+          <p></p>
+        </div>
+        <div class="card-action">
+          <a href="https://www.linkedin.com/in/muhammad-saad-4151a3182/">For More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </section>
+ 
+  
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            
+            $('.sidenav').sidenav();
+            $('.parallax').parallax();
+        })
+        // $('#button').click(function(e) {
+        //   //this will stop form auto submit thus showing your error
+        //   if(document.getElementById("#image-selector").files.length == 0 ){ 
+        //         $('#adiv').html("please enter your name")
+        //         e.preventDefault();
+        //     }
+        // });
+        $('a').click(function(){
+          $('html, body').animate({
+              scrollTop: $( $(this).attr('href') ).offset().top
+          }, 600);
+          return false;
+      });
+      </script>
+</body>
+</html>
