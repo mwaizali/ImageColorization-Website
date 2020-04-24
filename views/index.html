@@ -28,12 +28,12 @@
         <div class="nav-wrapper container" >
           <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <a href="#" class="brand-logo">ImageColorization</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#home"><i class="material-icons left">home</i> Home</a></li>
-            <li><a href="#about"><i class="material-icons left">info</i> About</a></li>
-            <li><a href="#contact"><i class="material-icons left">call_end</i>Contact</a></li>
-            <li><a href="help.html"><i class="material-icons left">help</i>Help</a></li>
-        </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="#home"><i class="material-icons left">home</i> Home</a></li>
+              <li><a href="#about"><i class="material-icons left">info</i> About</a></li>
+              <li><a href="#contact"><i class="material-icons left">call_end</i>Contact</a></li>
+              <li><a href="help.html"><i class="material-icons left">help</i>Help</a></li>
+          </ul>
         </div>
     </nav>
     <ul id="slide-out" class="sidenav">
@@ -43,19 +43,17 @@
       <li><a href="help.html"><i class="material-icons left">help</i>Help</a></li>
     </ul>
     <section > 
-    <div id="home" class="parallax-container">
-        <div class="parallax">
-            <img src="images/img-6.jpg">
-        </div>
-    </div>
+      <div id="home" class="parallax-container">
+          <div class="parallax">
+              <img src="images/img-6.jpg">
+          </div>
+      </div>
         <div class="section white">
           <div class="row container center">
+            <br id="check"/>
             <form  action="/" enctype="multipart/form-data" method="post">
             <h2 class="header">Fill Colors In Your Image</h2>
             <p class="grey-text text-darken-3 lighten-3">Upload any grey scale image</p>
-            <!-- <div class="file-path-wrapper blue-grey darken-4">
-            <input class="file-path validate" type="file" placeholder="Upload one or more files"><br>
-            </div> -->
             <div class="file-field input-field">
               <div class="btn blue-grey darken-4">
                 <span>File</span>
@@ -66,21 +64,24 @@
               </div>
             </div>
             <p class="grey-text text-darken-3 lighten-3">Upload any grey scale image</p>
-            <button id="button" class="waves-effect waves-light btn-large blue-grey darken-4"  >Colorize it</button>  
+            <button id="button" onclick=" localStorage.setItem('loader','1');" class="waves-effect waves-light btn-large blue-grey darken-4">Colorize it</button>  
           </form>
+          <brs/><br/>
+            <div id="loader" style="display:none;" class="progress center blue-grey darken-2" >
+              <div class="indeterminate"></div>
+            </div>
+            <div style="display: none;" id="kuchbhi">
+              <img src="upload/image.png" class="responsive-img"> 
+              <br/> 
+              <button id="button" class="waves-effect waves-light btn blue-grey darken-4"><i class="material-icons left ">file_download</i>Download</button>  
+            </div>
           </div>
         </div>
 
         <div class="parallax-container">
           <div class="parallax"><img src="images/img-4.jpg"></div>
         </div>
-        <!-- <div class="container center">
-            <section class=" ">
-                <button class="btn blue-grey lighten-1 " style="margin-top: 250px;" ><i class="material-icons left">file_upload</i>upload</button>
-            </section>
-        </div>
-    </div> -->
-
+        
     </section>
     <br id="about">
     <div>
@@ -94,7 +95,7 @@
            <img  src="images/Half-Color.jpg" class="responsive-img">
         </div>
         <div class="col m5 s12 " >
-            <!-- <img src="AQ/1 IMG_1260 lg.jpg" class="responsive-img"> -->
+           
             <h3>What is image colorization?</h3>
             <p style="font-size: x-large;">
                         Bring a new meaning to your 
@@ -200,6 +201,21 @@
           }, 600);
           return false;
       });
+
+
+      $(document).ready(function(){
+       
+     var loader = localStorage.getItem("loader")
+     if(loader == '1'){ window.location = "#check";
+    $("#loader").css("display","block");
+    setTimeout(function(){
+
+      $("#loader").css("display","none");
+    $("#kuchbhi").css("display","block")
+    localStorage.setItem("loader",'0')
+    },5000)
+     }
+    });
       </script>
 </body>
 </html>

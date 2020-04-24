@@ -41,14 +41,16 @@ app.post("/",upload.single("image-selector"),(req, res) => {
     if (path.extname(req.file.originalname).toLowerCase() === ".png" ||path.extname(req.file.originalname).toLowerCase() === ".jpg" || path.extname(req.file.originalname).toLowerCase() === ".jpeg" ) {
       
       fs.rename(tempPath, targetPath, err => {
+        res.redirect("/");
         if (err) return handleError(err, res);
-        console.log("Starting ")
+          console.log("Executing python ...")
+          console.log("Child Process created ... ");
           subprocess = spawn('python',["./node.py"] ); 
-          console.log("Python run");
+          console.log("Start Processing ... ");
           subprocess.stdout.on('data', function(data) { 
-            console.log('in data function')
+            console.log('Processing Done ...')
             console.log(data.toString());
-            res.redirect("/mypage");
+
         });
       });
     } 
@@ -56,7 +58,7 @@ app.post("/",upload.single("image-selector"),(req, res) => {
     {
       fs.unlink(tempPath, err => {
         if (err) return handleError(err, res);
-
+  
         res
           .status(403)
           .contentType("text/plain")
@@ -66,8 +68,8 @@ app.post("/",upload.single("image-selector"),(req, res) => {
   }
 );
 
-app.get('/mypage', (req,res) =>{
+// app.get('/mypage', (req,res) =>{
 
-    res.sendFile(path.join(__dirname,"/views/secondpage.html"));
+//     res.sendFile(path.join(__dirname,"/views/index.html"));
   
-  });
+//   });

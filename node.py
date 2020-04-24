@@ -64,7 +64,7 @@
 # cv2.imwrite(testpath,skimage.color.lab2rgb(cur))
 
 
-print(" SAVED ")
+print(" Finished ")
 
 # # var = r'C:\dummy_folder\a.txt' 
 # # var.replace('\\', '/') print(var)
