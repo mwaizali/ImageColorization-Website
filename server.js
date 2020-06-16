@@ -15,7 +15,7 @@ app.listen(8080,()=>{ console.log("Server is running .. "); });
 
 
 const multer = require("multer");
-
+ 
 const handleError = (err, res) => {
   res
     .status(500)
@@ -43,15 +43,15 @@ app.post("/",upload.single("image-selector"),(req, res) => {
       fs.rename(tempPath, targetPath, err => {
         res.redirect("/");
         if (err) return handleError(err, res);
-          console.log("Executing python ...")
-          console.log("Child Process created ... ");
-          subprocess = spawn('python',["./node.py"] ); 
-          console.log("Start Processing ... ");
-          subprocess.stdout.on('data', function(data) { 
-            console.log('Processing Done ...')
-            console.log(data.toString());
+          // console.log("Executing python ...")
+          // console.log("Child Process created ... ");
+          // subprocess = spawn('python',["./node.py"] ); 
+          // console.log("Start Processing ... ");
+        //   subprocess.stdout.on('data', function(data) { 
+        //     console.log('Processing Done ...')
+        //     console.log(data.toString());
 
-        });
+        // });
       });
     } 
     else 
@@ -68,8 +68,3 @@ app.post("/",upload.single("image-selector"),(req, res) => {
   }
 );
 
-// app.get('/mypage', (req,res) =>{
-
-//     res.sendFile(path.join(__dirname,"/views/index.html"));
-  
-//   });
